@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ultimate Stalker web app Georgi Yanev James Narraway hmtl5 jQuery Bootstrap Youtube Twitch Twitter">
+    <meta name="author" content="Georgi Yanev">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Ultimate Stalker</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!--STYLES ARE SO LITTLE, NO POINT TO MAKE A HTTP REQUEST FOR AN EXTRA FILE-->
+    <style>
+      /*SIMPLE STYLES AND RESETS*/
+      /*NO bullets on list items*/
+      ul {
+        list-style-type: none;
+      }
+
+      /*Bump up font size a bit than the default one*/
+      body {
+        font-size: 1.5em;
+      }
+
+      /*Stream preview image responsive*/
+      .preview {
+        width: 100%;
+      }
+
+      /*Keep logos small*/
+      .logo {
+        width: 15%;
+      }
+
+      @media (min-width: 350px) {
+        .navbar .navbar-nav {
+          display: inline-block;
+          float: none;
+          vertical-align: top;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="col-md-2"></div>
+    <div class="col-md-8" id="wrapper">
+
+    <!--MAIN MENU STARTS HERE-->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header pull-left">
+          <a class="navbar-brand" href="#">Ultimate Stalker</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="#" onclick=location.reload();><div class="glyphicon glyphicon-refresh"></div></a></li>
+            <li><a href="#" data-toggle="modal" data-target="#debuggingMenu"><div class="glyphicon glyphicon-cog"></div></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--MAIN MENU ENDS HERE-->
+
+    <!--ROW1-->
+    <div class="row">
+      <div class="col-md-4">
+        <input id="addName" name="addName" type="text" placeholder="Forsenlol" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <select class="form-control col-md-4" name="serviceList" id="serviceList">
+          <option value="twitch">Twitch</option>
+          <option value="youtube">Youtube</option>
+          <option value="facebook">Facebook</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <button id="addStalked" name="addStalked" class="btn btn-primary btn-block col-md-4">Stalk!</button>
+      </div>
+    </div>
+    <!--ROW1-->
+
+    <!--ROW2-->
+    <div class="row">
+      <div class="col-md-4">
+      <h3 class="text-center"><img src="img/facebook.png" alt="facebook logo"> Facebook posts:</h3>
+          <ul id="statusFacebook" class="col-md-12">
+          </ul>
+      </div>
+
+      <div class="col-md-8">
+        <h3 class="text-center"><img src="img/twitch.png" alt="twitch logo"> Live on Twitch:</h3>
+            <ul id="statusTwitch" class="col-md-12">
+            </ul>
+        <h3 class="text-center"><img src="img/youtube.png" alt="youtube logo"> Recent uploads on Youtube:</h3>
+            <ul id="statusYoutube" class="col-md-12">
+            </ul>
+      </div>
+    </div>
+    <!--ROW2-->
+
+    <hr>
+
+  </div> <!--END OF WRAPPER-->
+  <div class="col-md-2"></div>
+
+  <!--MODALS-->
+  <!-- DEBUGGING MENU -->
+  <div id="debuggingMenu" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>DEBUGGING MENU:</h3>
+        </div>
+        <div class="modal-body">
+          <button id="deleteLocalStorage" class="btn btn-danger btn-block">Delete Local Storage</button>
+          <button id="loadStorage" class="btn btn-warning btn-block">Load Local Storage</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--LIBRARIES AND MY OWN SCRIPT GOES HERE-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="dist/js/bootstrap.min.js"></script>
+  <script src="jquery.timeago.js"></script>
+  <script type="text/javascript" src="default.js"></script>
+  </body>
+</html>
